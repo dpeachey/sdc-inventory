@@ -1,0 +1,26 @@
+---
+apiVersion: inv.sdcio.dev/v1alpha1
+kind: DiscoveryRule
+metadata:
+  name: dc1-spine-eos-arista
+  namespace: default
+spec:
+  period: 1m
+  addresses:
+  - address: ceos-spine.c9s-leafspine.svc.cluster.local
+    hostName: ceos-spine
+  discoveryProfile:
+    credentials: eos.arista.sdcio.dev
+    connectionProfiles:
+    - eos-arista-gnmi
+  targetConnectionProfiles:
+  - credentials: eos.arista.sdcio.dev
+    connectionProfile: eos-arista-gnmi
+    syncProfile: gnmi-get
+  targetTemplate:
+    labels:
+      sdcio.dev/vendor: arista
+      sdcio.dev/nos: eos
+      sdcio.dev/region: eu
+      sdcio.dev/dc: dc1
+      sdcio.dev/role: spine

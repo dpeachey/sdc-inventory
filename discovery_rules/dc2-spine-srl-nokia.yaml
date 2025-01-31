@@ -1,0 +1,26 @@
+---
+apiVersion: inv.sdcio.dev/v1alpha1
+kind: DiscoveryRule
+metadata:
+  name: dc1-spine-srl-nokia
+  namespace: default
+spec:
+  period: 1m
+  addresses:
+  - address: srl-spine.c9s-leafspine.svc.cluster.local
+    hostName: srl-spine
+  discoveryProfile:
+    credentials: srl.nokia.sdcio.dev 
+    connectionProfiles:
+    - srl-nokia-gnmi
+  targetConnectionProfiles:
+  - credentials: srl.nokia.sdcio.dev 
+    connectionProfile: srl-nokia-gnmi
+    syncProfile: gnmi-get
+  targetTemplate:
+    labels:
+      sdcio.dev/vendor: nokia
+      sdcio.dev/nos: srl
+      sdcio.dev/region: eu
+      sdcio.dev/dc: dc1
+      sdcio.dev/role: spine

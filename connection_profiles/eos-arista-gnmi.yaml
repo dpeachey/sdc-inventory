@@ -1,0 +1,12 @@
+---
+apiVersion: inv.sdcio.dev/v1alpha1
+kind: TargetConnectionProfile
+metadata:
+  name: eos-arista-gnmi
+  namespace: default
+spec:
+  port: 6030
+  protocol: gnmi
+  encoding: JSON_IETF
+  skipVerify: true
+  insecure: true
