@@ -6,6 +6,10 @@ metadata:
   namespace: default
 spec:
   period: 1m
+  concurrentScans: 2
+  defaultSchema:
+    provider: srl.nokia.sdcio.dev
+    version: 23.10.6
   addresses:
     - address: leafspine-srl-spine.c9s-leafspine.svc.cluster.local
       hostName: srl-spine

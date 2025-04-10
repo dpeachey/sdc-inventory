@@ -6,6 +6,10 @@ metadata:
   namespace: default
 spec:
   period: 1m
+  concurrentScans: 2
+  defaultSchema:
+    provider: eos.arista.sdcio.dev
+    version: 4.33.1F
   addresses:
     - address: leafspine-ceos-leaf1.c9s-leafspine.svc.cluster.local
       hostName: ceos-leaf1

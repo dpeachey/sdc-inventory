@@ -22,13 +22,13 @@ spec:
           - openconfig/openconfig-extensions.yang
         models:
           - srl_nokia/models
-    - dirs:
-        - dst: deviations
-          src: .
-      kind: branch
-      ref: v24.10
-      repoURL: https://github.com/sdcio/srlinux-yang-patch
-      schema:
-        models:
-          - deviations
+    # - dirs:
+    #     - dst: deviations
+    #       src: .
+    #   kind: branch
+    #   ref: v24.10
+    #   repoURL: https://github.com/sdcio/srlinux-yang-patch
+    #   schema:
+    #     models:
+    #       - deviations
   version: 23.10.6
