@@ -2,17 +2,19 @@
 apiVersion: inv.sdcio.dev/v1alpha1
 kind: DiscoveryRule
 metadata:
-  name: dc1-spine-eos-arista
+  name: lei1-leaf-eos-arista
   namespace: default
 spec:
   period: 1m
   concurrentScans: 2
   defaultSchema:
     provider: eos.arista.sdcio.dev
-    version: 4.33.1F
+    version: 4.33.0F
   addresses:
-    - address: leafspine-ceos-spine.c9s-leafspine.svc.cluster.local
-      hostName: ceos-spine
+    - address: clab-evpn-leaf3
+      hostName: clab-evpn-leaf3
+    - address: clab-evpn-leaf4
+      hostName: clab-evpn-leaf4
   discoveryProfile:
     credentials: eos.arista.sdcio.dev
     connectionProfiles:
@@ -26,5 +28,5 @@ spec:
       sdcio.dev/vendor: arista
       sdcio.dev/nos: eos
       sdcio.dev/region: eu
-      sdcio.dev/dc: dc1
-      sdcio.dev/role: spine
+      sdcio.dev/dc: lei1
+      sdcio.dev/role: leaf

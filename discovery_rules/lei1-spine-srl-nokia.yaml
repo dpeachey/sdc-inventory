@@ -2,17 +2,17 @@
 apiVersion: inv.sdcio.dev/v1alpha1
 kind: DiscoveryRule
 metadata:
-  name: dc1-spine-srl-nokia
+  name: lei1-spine-srl-nokia
   namespace: default
 spec:
   period: 1m
   concurrentScans: 2
   defaultSchema:
     provider: srl.nokia.sdcio.dev
-    version: 23.10.6
+    version: 24.10.1
   addresses:
-    - address: leafspine-srl-spine.c9s-leafspine.svc.cluster.local
-      hostName: srl-spine
+    - address: clab-evpn-spine1
+      hostName: clab-evpn-spine1
   discoveryProfile:
     credentials: srl.nokia.sdcio.dev
     connectionProfiles:
@@ -26,5 +26,5 @@ spec:
       sdcio.dev/vendor: nokia
       sdcio.dev/nos: srl
       sdcio.dev/region: eu
-      sdcio.dev/dc: dc1
+      sdcio.dev/site: lei1
       sdcio.dev/role: spine
